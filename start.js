@@ -1,6 +1,12 @@
-require('dotenv').config({ path: 'variables.env' }); // import environm variables
+const mongoose = require('mongoose');
 
-// and start all up!
+require('dotenv').config({ path: 'variables.env' }); // import environm variables
+mongoose.connect(process.env.DATABASE);
+mongoose.Promise = global.Promise;
+mongoose.connection.on('error', err => {
+  console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
+});
+require('./models/Sound'); // and start all up!
 const app = require('./app');
 app.set('port', process.env.PORT || 7777);
 const server = app.listen(app.get('port'), () => {
