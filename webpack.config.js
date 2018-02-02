@@ -1,10 +1,5 @@
-/*
-  Okay folks, want to learn a little bit about webpack?
-*/
-
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 /*
   webpack sees every file as a module.
@@ -55,12 +50,14 @@ const config = {
   module: {
     rules: [javascript]
   },
+  externals: {
+    // require("jquery") is external and available
+    //  on the global var jQuery
+    jquery: 'jQuery'
+  },
   // finally we pass it an array of our plugins - uncomment if you want to uglify
   // plugins: [uglify]
-  plugins: [
-    // here is where we tell it to output our css to a separate file
-    new ExtractTextPlugin('style.css')
-  ]
+  plugins: []
 };
 // webpack is cranky about some packages using a soon to be deprecated API. shhhhhhh
 process.noDeprecation = true;
