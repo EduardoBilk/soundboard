@@ -3067,9 +3067,13 @@ var _brutalist = __webpack_require__(1);
 
 var _brutalist2 = _interopRequireDefault(_brutalist);
 
-__webpack_require__(3);
+var _start = __webpack_require__(3);
+
+var _start2 = _interopRequireDefault(_start);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _start2.default)();
 
 /***/ })
 /******/ ]);

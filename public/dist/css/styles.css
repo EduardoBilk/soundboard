@@ -2,3 +2,11 @@
 @import url('./modules/_variables.css');
 @import url('./libs/brutalist/core/core.css');
 @import url('./libs/brutalist/theme.css');
+
+body {
+  margin: 15px;
+}
+.wrapper {
+  display: grid;
+  max-width: 80%;
+}
