@@ -1,0 +1,10 @@
+mixin addForm(sound = {})
+  form(action=`/add/${sound._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+    label(for="name") Title
+    input(type="text" name="name" value=sound.title)
+    label(for="name") Title
+    input(type="text" name="name" value=sound.title)
+    label(for='photo') Image
+    input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
+    label(for='photo') Sound
+    input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
