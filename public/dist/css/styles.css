@@ -4,7 +4,7 @@
 @import url('./libs/brutalist/theme.css');
 
 body {
-  margin: 15px;
+  margin: 0px;
 }
 .wrapper {
   display: grid;

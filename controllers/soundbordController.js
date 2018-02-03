@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Store = mongoose.model('Store');
+const Store = mongoose.model('Sound');
 const multer = require('multer');
 
 exports.home = (req, res) => {

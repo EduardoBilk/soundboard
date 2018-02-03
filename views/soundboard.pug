@@ -1,7 +1,9 @@
 extends layout
 
 include mixins/_stickyAddButton
+include mixins/_addForm
 
 block content
   .wrapper
+    +addForm()
     +stickyAddButton()

@@ -50,14 +50,13 @@ const config = {
   module: {
     rules: [javascript]
   },
-  externals: {
-    // require("jquery") is external and available
-    //  on the global var jQuery
-    jquery: 'jQuery'
-  },
   // finally we pass it an array of our plugins - uncomment if you want to uglify
   // plugins: [uglify]
-  plugins: []
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery'
+    })
+  ]
 };
 // webpack is cranky about some packages using a soon to be deprecated API. shhhhhhh
 process.noDeprecation = true;

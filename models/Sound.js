@@ -9,7 +9,7 @@ const soundSchema = new mongoose.Schema({
   },
   keyCode: Number,
   keyBind: String,
-  audioUrl: String
+  audio: String
 });
 
 module.exports = mongoose.model('Sound', soundSchema);
