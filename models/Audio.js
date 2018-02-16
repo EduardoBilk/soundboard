@@ -12,4 +12,4 @@ const soundSchema = new mongoose.Schema({
   audio: String
 });
 
-module.exports = mongoose.model('Sound', soundSchema);
+module.exports = mongoose.model('Audio', soundSchema);
