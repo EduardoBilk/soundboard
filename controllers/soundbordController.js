@@ -25,15 +25,16 @@ const multerOptions = {
   }
 };
 
-exports.home = (req, res) => {
-  res.render('soundboard', { title: 'L.A.G.' });
+exports.home = async (req, res) => {
+  const audios = await Audio.find();
+  console.log(audios);
+  res.render('soundboard', { title: 'L.A.G.', audios });
 };
 
 exports.add = multer(multerOptions).single('audio');
 
 exports.saveAudio = async (req, res) => {
   console.log(req.body);
-  console.log(req.file);
   const audio = await new Audio(req.body).save();
   res.redirect(`/`);
 };

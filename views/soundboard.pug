@@ -2,8 +2,12 @@ extends layout
 
 include mixins/_stickyAddButton
 include mixins/_addForm
+include mixins/_soundCard
 
 block content
+  
+  +addForm()
   .wrapper
-    +addForm()
-    +stickyAddButton()
+    each audio in audios
+      +soundCard(audio)
+  +stickyAddButton()

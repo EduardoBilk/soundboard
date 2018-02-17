@@ -1,6 +1,6 @@
-mixin soundCard(sound = {})
-  .eggplant.banana-text.lucida-text.heavy.key(data-key=${sound.keyBind}) 
-    kbd= ${sound.keyText}
-    span.sound= ${sound.title}
-  audio(data-key=${sound.keyBind} src=${sound.url})
+mixin soundCard(audio = {})
+  div( class="eggplant banana-text lucida-text heavy key" data-key=audio.keyCode) 
+    kbd= audio.keyBind.toUpperCase()
+    span.audio= audio.title
+  audio(src=`/public/uploads/${audio.audio}`)&attributes({'data-key': audio.keyCode})
   

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const soundSchema = new mongoose.Schema({
+const audioSchema = new mongoose.Schema({
   title: {
     type: String,
     trim: true,
@@ -12,4 +12,13 @@ const soundSchema = new mongoose.Schema({
   audio: String
 });
 
-module.exports = mongoose.model('Audio', soundSchema);
+audioSchema.pre('save', async function(next) {
+  //não pode ser arrow function pq o this precisa ser a instância do schama que vai ser salvo e não quem chamou.
+  if (!this.isModified('name')) {
+    return next();
+  }
+  this.keyCode = this.keyBind.charAt(0);
+  next(); // middleware concept
+});
+
+module.exports = mongoose.model('Audio', audioSchema);
