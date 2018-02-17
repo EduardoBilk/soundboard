@@ -7,15 +7,15 @@ mixin addForm()
         form(action=`/add/` method="POST" class="card" enctype="multipart/form-data")
           .row
             .col.s6.m6.l6
-              label(for="name") Title
-              input(type="text" name="name")
+              label(for="title") Title
+              input(type="text" name="title")
             .col.s6.m6.l6
               label(for="keyBind") Key
               input(type="text" name="keyBind" )
           .row
             .col.s12.m12.l12.form-group
               label(for='audio') Sound 
-              input(type="file" name="audio" id="audio" accept="audio/mp3, audio/wav")
+              input(type="file" name="audio" id="audio" accept="audio/mp3, audio/wav, audio/mpeg")
           input(type="submit" value="ADD").medium-btn.green.white-text.glitch.text-right
       .modal-footer
         a(href="/").btn.chocolate.wheat-text.text-left close

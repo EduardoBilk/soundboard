@@ -34,6 +34,6 @@ exports.add = multer(multerOptions).single('audio');
 exports.saveAudio = async (req, res) => {
   console.log(req.body);
   console.log(req.file);
-  // const audio = await new Audio(req.body).save();
+  const audio = await new Audio(req.body).save();
   res.redirect(`/`);
 };
