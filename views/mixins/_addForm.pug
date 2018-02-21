@@ -1,23 +1,23 @@
 mixin addForm()
   .modal#add-form
-    .modal-content.platinum
+    .modal-content.green-apple
       .modal-head
-        h3 Add a new audio to the board
-      .modal-content.vanilla-bean
+        h3.comic-sans-text.vanilla-text  Add a new audio to the board
+      .modal-content.green-apple
         form(action=`/add/` method="POST" class="card" enctype="multipart/form-data")
           .row
-            .col.s6.m6.l6
-              label(for="title") Title
+            .col.s8.m10.l11
+              label.allcaps.pomegranate-text.heavy(for="title") Title
               input(type="text" name="title")
-            .col.s6.m6.l6
-              label(for="keyBind") Key
-              input(type="text" name="keyBind" )
+            .col.s4.m2.l1
+              label.allcaps.pomegranate-text.heavy(for="keyBind") Key
+              input(type="text" id="keyBind" name="keyBind" maxlength="1" size="10")
           .row
             .col.s12.m12.l12.form-group
-              label(for='audio') Sound 
+              label.allcaps.pomegranate-text.heavy(for='audio') Sound 
               input(type="file" name="audio" id="audio" accept="audio/mp3, audio/wav, audio/mpeg")
-          input(type="submit" value="ADD").btn.full-btn.green.white-text.text-right
+          input(type="submit" value="CLICK HERE TO ADD THIS PIECE OF ART TO THE DATABASE").btn.full-btn.mint.pomegranate-text.heavy
       .modal-footer
-        a(href="/").btn.chocolate.wheat-text.text-left close
+        a(href="/").btn.pomegranate.peach-text.text-left CLOSE
         
-    .overlay.lemon
+    .overlay.peach

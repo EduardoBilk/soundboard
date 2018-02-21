@@ -1,4 +1,7 @@
 window.addEventListener('keydown', e => {
+  const url = window.location.href.split('/');
+  console.log(url[url.length - 1]);
+  if (url[url.length - 1] === '#add-form') return;
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   if (!audio) return;

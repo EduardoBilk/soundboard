@@ -10,7 +10,7 @@ const multerOptions = {
     },
     filename: function(req, file, next) {
       const extension = file.mimetype.split('/')[1];
-      console.log('opt', file.mimetype);
+
       req.body.audio = `${uuid.v4()}.${extension}`;
       next(null, req.body.audio);
     }
@@ -27,14 +27,12 @@ const multerOptions = {
 
 exports.home = async (req, res) => {
   const audios = await Audio.find();
-  console.log(audios);
   res.render('soundboard', { title: 'L.A.G.', audios });
 };
 
 exports.add = multer(multerOptions).single('audio');
 
 exports.saveAudio = async (req, res) => {
-  console.log(req.body);
   const audio = await new Audio(req.body).save();
   res.redirect(`/`);
 };

@@ -74,6 +74,9 @@
 
 
 window.addEventListener('keydown', function (e) {
+  var url = window.location.href.split('/');
+  console.log(url[url.length - 1]);
+  if (url[url.length - 1] === '#add-form') return;
   var audio = document.querySelector('audio[data-key="' + e.keyCode + '"]');
   var key = document.querySelector('.key[data-key="' + e.keyCode + '"]');
   if (!audio) return;
