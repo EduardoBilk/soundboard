@@ -14,10 +14,13 @@ const audioSchema = new mongoose.Schema({
 
 audioSchema.pre('save', async function(next) {
   //não pode ser arrow function pq o this precisa ser a instância do schama que vai ser salvo e não quem chamou.
-  if (!this.isModified('name')) {
+  console.log('chamou pre');
+  if (!this.isModified('title')) {
+    console.log('denied');
     return next();
   }
-  this.keyCode = this.keyBind.charAt(0);
+  console.log('associou');
+  this.keyCode = this.keyBind.toUpperCase().charCodeAt(0);
   next(); // middleware concept
 });
 
