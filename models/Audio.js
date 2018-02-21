@@ -14,7 +14,6 @@ const audioSchema = new mongoose.Schema({
 
 audioSchema.pre('save', async function(next) {
   //não pode ser arrow function pq o this precisa ser a instância do schama que vai ser salvo e não quem chamou.
-  console.log('chamou pre');
   if (!this.isModified('title')) {
     return next();
   }

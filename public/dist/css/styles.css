@@ -30,3 +30,11 @@ kbd {
 .audio {
   letter-spacing: 0.1rem;
 }
+#footer {
+  top: 99%;
+  left: 50%;
+  margin-top: -15px; /* Negative half of height. */
+  margin-left: -200px;
+  width: 400px;
+  height: 30px;
+}
