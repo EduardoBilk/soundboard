@@ -6,7 +6,7 @@ const uuid = require('uuid');
 const multerOptions = {
   storage: multer.diskStorage({
     destination: function(req, file, next) {
-      next(null, `${__dirname}/public/uploads/`);
+      next(null, `../public/uploads/`);
     },
     filename: function(req, file, next) {
       const extension = file.mimetype.split('/')[1];
