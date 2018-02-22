@@ -9,7 +9,7 @@ body {
 .wrapper {
   margin: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
   max-width: 80%;
 }
