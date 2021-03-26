@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-require('dotenv').config({ path: 'variables.env' }); // import environm variables
+require('dotenv').config(); // import environm variables
 mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', err => {
-  console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
+  console.error(`🙅 🚫 → ${err.message}`);
 });
 require('./models/Audio'); // and start all up!
 const app = require('./app');
